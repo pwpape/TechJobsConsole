@@ -64,7 +64,7 @@ namespace TechJobsConsole
                     // Fetch results
                     if (columnChoice.Equals("all"))
                     {
-                        Console.WriteLine("Search all fields not yet implemented.");
+                        PrintJobs(JobData.FindAll());
                     }
                     else
                     {
@@ -119,9 +119,7 @@ namespace TechJobsConsole
 
         private static void PrintJobs(List<Dictionary<string, string>> someJobs)
         {
-
-
-            
+         
             foreach (Dictionary<string, string> element in someJobs)
             {
                 Console.WriteLine("*****");

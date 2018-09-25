@@ -105,6 +105,7 @@ namespace TechJobsConsole
             {
                 AllJobs.Add(objects);
             }
+            
             IsDataLoaded = true;
         }
 

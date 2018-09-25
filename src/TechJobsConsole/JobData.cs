@@ -8,6 +8,8 @@ namespace TechJobsConsole
     class JobData
     {
         static List<Dictionary<string, string>> AllJobs = new List<Dictionary<string, string>>();
+        static List<Dictionary<string, string>> TotalJobs = new List<Dictionary<string, string>>();
+        
         static bool IsDataLoaded = false;
 
         public static List<Dictionary<string, string>> FindAll()
@@ -97,9 +99,12 @@ namespace TechJobsConsole
                 {
                     rowDict.Add(headers[i], row[i]);
                 }
-                AllJobs.Add(rowDict);
+                TotalJobs.Add(rowDict);
             }
-
+            foreach (Dictionary<string, string> objects in TotalJobs)
+            {
+                AllJobs.Add(objects);
+            }
             IsDataLoaded = true;
         }
 

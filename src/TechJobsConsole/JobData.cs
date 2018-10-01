@@ -53,6 +53,7 @@ namespace TechJobsConsole
                 if (kVP.Value.ToLower() == searchParam.ToLower())
                 {
                     searchResults.Add(row);
+                    break;
                 }
             }
         }

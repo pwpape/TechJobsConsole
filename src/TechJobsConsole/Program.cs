@@ -59,7 +59,7 @@ namespace TechJobsConsole
                     Console.WriteLine("\nSearch term: ");
                     string searchTerm = Console.ReadLine();
 
-                    List<Dictionary<string, string>> searchResults;
+                    
 
                     // Fetch results
                     if (columnChoice.Equals("all"))
@@ -68,8 +68,15 @@ namespace TechJobsConsole
                     }
                     else
                     {
-                        searchResults = JobData.FindByColumnAndValue(columnChoice, searchTerm);
-                        PrintJobs(searchResults);
+                        List<Dictionary<string, string>> searchResults = JobData.FindByValue(searchTerm);
+                        if (searchResults.Count == 0)
+                        {
+                            Console.WriteLine("No results found");
+                        }
+                        else
+                        {
+                        PrintJobs(JobData.FindByValue(searchTerm));
+                        }
                     }
                 }
             }
